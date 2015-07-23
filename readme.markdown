@@ -1,11 +1,12 @@
-# virtual-dom-starter
+# virtual-dom-starter-babel-es6
 
 bare-bones [virtual-dom](https://npmjs.com/package/virtual-dom) starter
+with [babelify](https://npmjs.com/package/babelify) for es6
 using [main-loop](https://npmjs.com/package/main-loop)
 and [browserify](http://browserify.org)/[watchify](https://npmjs.com/package/watchify)
 with [npm run scripts](http://substack.net/task_automation_with_npm_run)
 
-[view the starter demo](http://substack.neocities.org/virtual_dom_starter.html)
+[view the starter demo](http://substack.neocities.org/virtual_dom_starter_babel_es6.html)
 
 # quick start
 
@@ -23,9 +24,11 @@ $ npm start
 # starter code
 
 ``` js
-var h = require('virtual-dom/h')
-var main = require('main-loop')
-var loop = main({ n: 0 }, render, require('virtual-dom'))
+import h from 'virtual-dom/h'
+import vdom from 'virtual-dom'
+import main from 'main-loop'
+
+var loop = main({ n: 0 }, render, vdom)
 document.querySelector('#content').appendChild(loop.target)
 
 function render (state) {

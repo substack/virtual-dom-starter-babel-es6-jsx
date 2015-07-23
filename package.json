@@ -1,11 +1,17 @@
 {
   "name": "virtual-dom-starter",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "scripts": {
     "build": "browserify main.js | uglifyjs -cm > public/bundle.js",
     "start": "ecstatic -p 8000 public",
     "watch": "watchify main.js -o public/bundle.js -dv"
   },
   "dependencies": {
+    "babelify": "^6.1.3",
     "browserify": "^10.2.6",
     "ecstatic": "~0.8.0",
     "main-loop": "^3.1.0",

@@ -1,6 +1,8 @@
-var h = require('virtual-dom/h')
-var main = require('main-loop')
-var loop = main({ n: 0 }, render, require('virtual-dom'))
+import h from 'virtual-dom/h'
+import vdom from 'virtual-dom'
+import main from 'main-loop'
+
+var loop = main({ n: 0 }, render, vdom)
 document.querySelector('#content').appendChild(loop.target)
 
 function render (state) {
