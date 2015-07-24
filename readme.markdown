@@ -1,12 +1,14 @@
-# virtual-dom-starter-babel-es6
+# virtual-dom-starter-babel-es6-jsx
 
 bare-bones [virtual-dom](https://npmjs.com/package/virtual-dom) starter
 with [babelify](https://npmjs.com/package/babelify) for es6
+and [babel-plugin-jsx-factory](https://github.com/substack/babel-plugin-jsx-factory)
+for jsx
 using [main-loop](https://npmjs.com/package/main-loop)
 and [browserify](http://browserify.org)/[watchify](https://npmjs.com/package/watchify)
 with [npm run scripts](http://substack.net/task_automation_with_npm_run)
 
-[view the starter demo](http://substack.neocities.org/virtual_dom_starter_babel_es6.html)
+[view the starter demo](http://substack.neocities.org/virtual_dom_starter_babel_es6_jsx.html)
 
 # quick start
 
@@ -32,10 +34,11 @@ var loop = main({ n: 0 }, render, vdom)
 document.querySelector('#content').appendChild(loop.target)
 
 function render (state) {
-  return h('div', [
-    h('h1', 'clicked ' + state.n + ' times'),
-    h('button', { onclick: onclick }, 'click me!')
-  ])
+  return <div>
+    <h1>clicked {String(state.n)} times</h1>
+    <button onclick={onclick}>click me!</button>
+  </div>
+
   function onclick () {
     loop.update({ n: state.n + 1 })
   }

@@ -6,10 +6,11 @@ var loop = main({ n: 0 }, render, vdom)
 document.querySelector('#content').appendChild(loop.target)
 
 function render (state) {
-  return h('div', [
-    h('h1', 'clicked ' + state.n + ' times'),
-    h('button', { onclick: onclick }, 'click me!')
-  ])
+  return <div>
+    <h1>clicked {String(state.n)} times</h1>
+    <button onclick={onclick}>click me!</button>
+  </div>
+
   function onclick () {
     loop.update({ n: state.n + 1 })
   }
