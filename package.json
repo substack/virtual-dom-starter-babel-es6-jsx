@@ -5,9 +5,16 @@
       [
         "babelify",
         {
-          "presets": [ "es2015" ],
+          "presets": [
+            "es2015"
+          ],
           "plugins": [
-            ["transform-react-jsx", {"pragma": "h"}]
+            [
+              "transform-react-jsx",
+              {
+                "pragma": "h"
+              }
+            ]
           ]
         }
       ]
@@ -19,6 +26,8 @@
     "watch": "watchify main.js -o public/bundle.js -dv"
   },
   "dependencies": {
+    "babel-plugin-transform-react-jsx": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
     "babelify": "^7.2.0",
     "browserify": "^10.2.6",
     "ecstatic": "~0.8.0",
